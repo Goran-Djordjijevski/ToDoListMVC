@@ -1,0 +1,12 @@
+﻿@model ToDoListMVC.DAL.Item
+
+@{
+    ViewBag.Title = "To Do List - Details";
+}
+
+<h2>Details</h2>
+<hr />
+
+@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)
+
+<p>@Html.ActionLink("Back to list", "Index")</p>

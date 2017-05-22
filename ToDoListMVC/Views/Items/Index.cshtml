@@ -1,0 +1,18 @@
+﻿@model IEnumerable<ToDoListMVC.DAL.Item>
+
+@{
+    ViewBag.Title = "To Do List - Index";
+}
+
+<h2>To Do List</h2>
+
+<h4>@Html.DisplayNameFor(model => model.Description)</h4>
+
+<ul>
+    @foreach (var listItem in Model)
+    {
+        <li>@Html.DisplayFor(modelItem => listItem.Description) | 
+            @Html.ActionLink("Details", "Details", new { id = listItem.ItemId })    
+        </li>
+    }
+</ul>
