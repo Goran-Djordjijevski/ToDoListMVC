@@ -1,0 +1,17 @@
+﻿@model ToDoListMVC.DAL.Item
+
+@{
+    ViewBag.Title = "To Do List - Delete";
+}
+
+<h2>Are you sure you want to delete this?</h2>
+<hr />
+
+@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)
+
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Delete" />
+}
+
+@Html.ActionLink("Back to list", "Index")
