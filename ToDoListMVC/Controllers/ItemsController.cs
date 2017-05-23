@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -35,6 +36,22 @@ namespace ToDoListMVC.Controllers
         public ActionResult Create(Item item)
         {
             db.Items.Add(item);
+            db.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var edit = db.Items.FirstOrDefault(items => items.ItemId == id);
+
+            return View(edit);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Item item)
+        {
+            db.Entry(item).State = EntityState.Modified;
             db.SaveChanges();
 
             return RedirectToAction("Index");
