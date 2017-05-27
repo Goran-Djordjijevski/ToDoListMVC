@@ -6,6 +6,8 @@
     <edmx:Diagrams>
       <Diagram DiagramId="00d89e36ef054563811e767bdc017896" Name="Diagram1">
         <EntityTypeShape EntityType="ToDoListModel.Item" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ToDoListModel.Category" Width="1.5" PointX="3.625" PointY="0.875" />
+        <AssociationConnector Association="ToDoListModel.FK_Items_Categories" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

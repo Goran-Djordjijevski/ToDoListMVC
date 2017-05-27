@@ -132,6 +132,9 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ItemsController.cs" />
+    <Compile Include="DAL\Category.cs">
+      <DependentUpon>ToDoListDatabaseLayer.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAL\Item.cs">
       <DependentUpon>ToDoListDatabaseLayer.tt</DependentUpon>
     </Compile>

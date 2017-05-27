@@ -26,5 +26,6 @@ namespace ToDoListMVC.DAL
         }
     
         public virtual DbSet<Item> Items { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
     }
 }

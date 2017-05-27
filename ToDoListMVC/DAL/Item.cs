@@ -16,5 +16,8 @@ namespace ToDoListMVC.DAL
     {
         public int ItemId { get; set; }
         public string Description { get; set; }
+        public Nullable<int> CategoryId { get; set; }
+    
+        public virtual Category Category { get; set; }
     }
 }
