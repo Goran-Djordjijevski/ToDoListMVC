@@ -15,7 +15,7 @@ namespace ToDoListMVC.Controllers
         // GET: Items
         public ActionResult Index()
         {
-            var items = db.Items.ToList();
+            var items = db.Items.Include(c => c.Category).ToList();
 
             return View(items);
         }
@@ -29,6 +29,8 @@ namespace ToDoListMVC.Controllers
 
         public ActionResult Create()
         {
+            ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "Name");
+
             return View();
         }
 
@@ -44,6 +46,7 @@ namespace ToDoListMVC.Controllers
         public ActionResult Edit(int id)
         {
             var edit = db.Items.FirstOrDefault(items => items.ItemId == id);
+            ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "Name");
 
             return View(edit);
         }
