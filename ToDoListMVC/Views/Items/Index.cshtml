@@ -5,15 +5,39 @@
 }
 
 <h2>To Do List</h2>
+<hr />
 
-<h4>@Html.DisplayNameFor(model => model.Description)</h4>
+<table class="table">
 
-<ul>
-    @foreach (var listItem in Model)
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category.Name)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach(var listItem in Model)
     {
-        <li>@Html.DisplayFor(modelItem => listItem.Description) | @Html.ActionLink("Details", "Details", new { id = listItem.ItemId }) | @Html.ActionLink("Edit", "Edit", new { id = listItem.ItemId }) | @Html.ActionLink("Delete", "Delete", new { id = listItem.ItemId })    
-        </li>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => listItem.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => listItem.Category.Name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = listItem.ItemId }) |
+                @Html.ActionLink("Details", "Details", new { id = listItem.ItemId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = listItem.ItemId })
+            </td>
+        </tr>
     }
-</ul>
 
-<p>@Html.ActionLink("Add new item", "Create")</p>
+</table>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
