@@ -4,7 +4,7 @@
     ViewBag.Title = "To Do List - Create";
 }
 
-<h2>Create</h2>
+<h2>Create a new item</h2>
 <hr />
 <h4>Add a new task</h4>
 
@@ -13,7 +13,10 @@
     @Html.LabelFor(model => model.Description)
     @Html.TextBoxFor(model => model.Description)
 
-    <input type="submit" value="Add new task" />
+    @Html.LabelFor(model => model.CategoryId)
+    @Html.DropDownList("CategoryId")
+
+    <input type="submit" value="Create" class="btn btn-default" />
 }
 
 <p>@Html.ActionLink("Back to list", "Index")</p>
